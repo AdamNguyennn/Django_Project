@@ -11,15 +11,8 @@
 	<div>
 		<h1>To do list</h1>
 		{% for list in lists %}
-		<p>- {{list.id}} </p>
 		<p>- {{list.name}} </p>
 		<p>- {{list.description}} </p>
-		{% if list.is_true == True %}
-		<p>Done :)))</p>>
-		{% else %}
-		<p>NOPE.....</p>
-		{% endif %}
-		<br>
 		{% endfor %}
 	</div>
 	<br>
