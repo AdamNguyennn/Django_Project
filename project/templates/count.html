@@ -2,3 +2,7 @@
 
 <link rel="stylesheet" href="{% static 'style.css' %}">
 <h1>Number of the words:  <span>{{count}}</span>></h1>
+
+{% for post in posts%}
+<a href="{% url 'post' post%}">POST</a> # (url 'post' post) is gonna call post func at views
+{% endfor %}

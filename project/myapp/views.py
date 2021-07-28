@@ -42,7 +42,7 @@ def login(request):
 
         user = auth.authenticate(username=username, password=password)
         if user is not None:
-            auth.login(request, user)
+            auth.login(request, user) 
             return redirect('/')
         else:
             messages.info(request, 'Credential is invalid')
@@ -54,8 +54,12 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
     
+def post(request, sth):
+    
+    return render(request, 'post.html', {'sth':sth})
 
 def count(request):
-    word = request.POST['text']
-    count = len(word.split())
-    return render(request, 'count.html',{'count':count})
+    # word = request.POST['text']
+    posts = [1,2,3,4, 'john', 'na']
+    # count = len(word.split())
+    return render(request, 'count.html',{'posts': posts})
